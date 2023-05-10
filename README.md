@@ -10,6 +10,7 @@ The source data resides in Azure Data Lake and needs to be processed in a NYC da
 
 
 ## For this project, we will do our work in the Azure Portal, using several Azure resources including:
+
 Azure Data Lake Gen2
 Azure SQL DB
 Azure Data Factory
