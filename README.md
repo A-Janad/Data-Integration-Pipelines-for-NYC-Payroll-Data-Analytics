@@ -22,5 +22,9 @@ Setup Data and Resources in Azure
 Create an Azure Data Lake Storage Gen2 (storage account) with three directories in this storage container named
 
 dirpayrollfiles
+
 dirhistoryfiles
+
 dirstaging
+
+<img width="960" alt="storage_contianers" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/5b7c9f81-8249-4331-8f98-a0ee8c375350">
