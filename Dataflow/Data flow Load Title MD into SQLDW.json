@@ -1,0 +1,56 @@
+{
+	"name": "Data flow Load Title MD into SQLDW",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "dsTitleMaster",
+						"type": "DatasetReference"
+					},
+					"name": "titlecsv"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dsSQLDW_NYC_Payroll_TITLE_MD",
+						"type": "DatasetReference"
+					},
+					"name": "sqldwtitle"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          TitleCode as string,",
+				"          TitleDescription as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> titlecsv",
+				"titlecsv sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          TitleCode as string,",
+				"          TitleDescription as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     staged: true,",
+				"     allowCopyCommand: true,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          TitleCode,",
+				"          TitleDescription",
+				"     )) ~> sqldwtitle"
+			]
+		}
+	}
+}
