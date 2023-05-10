@@ -1,0 +1,9 @@
+{
+	"name": "adfpayroll",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ba7fb11f-7937-4386-a7f0-8a5fd7b3661e",
+		"tenantId": "d9345812-ab46-4acc-a929-7d6446ba246e"
+	}
+}
