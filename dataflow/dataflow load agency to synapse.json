@@ -1,0 +1,57 @@
+{
+	"name": "dataflow load agency to synapse",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AgencyMaster",
+						"type": "DatasetReference"
+					},
+					"name": "sourcedatalakeagency",
+					"description": "Import data from AgencyMaster"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "NYC_Payroll_AGENCY_MD",
+						"type": "DatasetReference"
+					},
+					"name": "sinksynapseagency"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          AgencyID as short,",
+				"          AgencyName as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> sourcedatalakeagency",
+				"sourcedatalakeagency sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          AgencyID as string,",
+				"          AgencyName as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     staged: true,",
+				"     allowCopyCommand: true,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          AgencyID,",
+				"          AgencyName",
+				"     )) ~> sinksynapseagency"
+			]
+		}
+	}
+}

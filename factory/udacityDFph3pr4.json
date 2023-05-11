@@ -1,0 +1,9 @@
+{
+	"name": "udacityDFph3pr4",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0c8277c5-140c-4927-9765-3c0c593e703d",
+		"tenantId": "5a88b7ca-ce4f-4ab1-ab19-76da78d7a572"
+	}
+}
