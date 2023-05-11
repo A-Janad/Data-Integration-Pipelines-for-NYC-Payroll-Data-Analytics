@@ -145,4 +145,17 @@ For each Employee, Title, and Agency file data flow, sink the data into each tar
 
 -Validate and publish the pipelines
 
-Employee
+**Employee, title, Agence, and Year 2021**
+
+![pipeline_emp](https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/e80e1573-d471-457d-803b-adbc41181806)
+
+![pipeline_title](https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/58302119-109a-4c56-980d-f178ea0966bb)
+
+![pipeline_year2021](https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/41fcc90f-b71b-4001-8e6c-f3248cf11125)
+
+![pipeline_agency](https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/132cd5b3-31c2-42ca-8d31-262a49b03c88)
+
+
+
+**Load all to synapse**
+
