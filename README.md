@@ -120,3 +120,29 @@ Remember to publish all the datasets
 Create the data flows for loading Employee, Title, and Agency files into corresponding SQL pool tables on Synapse Analytics
 
 For each Employee, Title, and Agency file data flow, sink the data into each target Synaspe table
+
+<img width="960" alt="data flows for loadingm agency" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/8b2c8d9f-ff61-4593-9f60-72f0ff9e50a2">
+
+<img width="960" alt="data flows for loading title" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/4e368d75-06d5-4bae-b6ab-a413d2eb85a3">
+
+<img width="960" alt="data flows for loading Employee" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/f777bb87-866b-4515-bf4e-5638b001c8a7">
+
+
+## 4. Create a data flow to load 2021 data from SQL DB to Synapse Analytics
+
+
+![sql_synapse](https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/867e1252-3cb6-40cb-ad0e-d0f3c28b6d88)
+
+![sql_synapse2](https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/dea3badd-4f88-4b5d-9f21-e56473a5f2eb)
+
+
+
+## 5. Create pipelines for Employee, Title, Agency, and year 2021 Payroll transaction data to Synapse Analytics containing the data flows.
+
+-Select the dirstaging folder in the data lake storage for staging
+
+-Optionally you can also create one master pipeline to invoke all the Data Flows
+
+-Validate and publish the pipelines
+
+Employee
