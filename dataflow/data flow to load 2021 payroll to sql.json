@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "table_synapse_nycpayroll_summary",
+						"referenceName": "NYC_Payroll_Data",
 						"type": "DatasetReference"
 					},
 					"name": "sourcenycpayroll2021",
@@ -27,8 +27,24 @@
 			"scriptLines": [
 				"source(output(",
 				"          FiscalYear as integer,",
+				"          PayrollNumber as integer,",
+				"          AgencyID as string,",
 				"          AgencyName as string,",
-				"          TotalPaid as double",
+				"          EmployeeID as string,",
+				"          LastName as string,",
+				"          FirstName as string,",
+				"          AgencyStartDate as date,",
+				"          WorkLocationBorough as string,",
+				"          TitleCode as string,",
+				"          TitleDescription as string,",
+				"          LeaveStatusasofJune30 as string,",
+				"          BaseSalary as double,",
+				"          PayBasis as string,",
+				"          RegularHours as double,",
+				"          RegularGrossPaid as double,",
+				"          OTHours as double,",
+				"          TotalOTPaid as double,",
+				"          TotalOtherPay as double",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
