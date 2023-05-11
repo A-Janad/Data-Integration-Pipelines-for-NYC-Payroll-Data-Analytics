@@ -159,3 +159,5 @@ For each Employee, Title, and Agency file data flow, sink the data into each tar
 
 **Load all to synapse**
 
+<img width="960" alt="Load_all_to_synapse" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/cf03550c-970d-4fbd-b9b4-32ef7caf0d8e">
+
