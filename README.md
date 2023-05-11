@@ -108,4 +108,15 @@ Remember to publish all the datasets
 
 <img width="960" alt="Mointor_dataflow" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/beebe342-18e2-46be-b330-de35bffbd76c">
 
+**Take a screenshot of the Azure Data Factory screen pipeline run after it has finished.**
 
+<img width="960" alt="ADF_pipeline" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/c4682c7e-d565-4f78-b28e-7f2a53f48340">
+
+**Make sure the data is successfully loaded into the SQL DB table**
+
+<img width="935" alt="loaded_to_sql" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/aae9699a-3cef-4dc0-a655-8495e242e3f8">
+
+## 3. Create data flows to load the data from the data lake files into the Synapse Analytics data tables
+Create the data flows for loading Employee, Title, and Agency files into corresponding SQL pool tables on Synapse Analytics
+
+For each Employee, Title, and Agency file data flow, sink the data into each target Synaspe table
