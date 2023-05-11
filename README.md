@@ -78,3 +78,34 @@ The table are successfully created in the SQL Database
 - Preview the data to make sure it is correctly parsed
 
 <img width="960" alt="preview_data" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/0a7b63ef-11e4-4894-bace-2391a69013d7">
+
+<img width="960" alt="Create_datasets" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/8a03b6d5-4444-4a49-8ced-51acbc5fd1fe">
+
+
+## 2. Repeat the same process to create datasets for the rest of the data files in the Data Lake
+-EmpMaster.csv
+-TitleMaster.csv
+-AgencyMaster.csv
+Remember to publish all the datasets
+
+## 3- Create the dataset for transaction data table that should contain current (2021) data in SQL DB
+
+<img width="960" alt="create_transaction_table" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/2fe94b70-f99c-4e59-bada-0c221e46cc9c">
+
+
+# Step 4: Create Data Flows
+
+## 1 .In Azure Data Factory, create the data flow to load 2021 Payroll Data to SQL DB transaction table (in the future NYC will load all the transaction data into this table).
+
+- Create a new data flow
+
+- Select the dataset for the 2021 payroll file as the source
+
+
+<img width="960" alt="dataflow_2021" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/727a9906-cbab-4c70-a031-8cc3b6d1a766">
+
+**Monitor the pipeline**
+
+<img width="960" alt="Mointor_dataflow" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/beebe342-18e2-46be-b330-de35bffbd76c">
+
+
