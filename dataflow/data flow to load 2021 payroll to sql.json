@@ -5,10 +5,6 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "nycpayroll_ds",
-						"type": "DatasetReference"
-					},
 					"name": "sourcenycpayroll2021",
 					"description": "Import data from nycpayroll_ds"
 				}
@@ -47,8 +43,7 @@
 				"          TotalOtherPay as double",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> sourcenycpayroll2021",
+				"     validateSchema: false) ~> sourcenycpayroll2021",
 				"sourcenycpayroll2021 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
