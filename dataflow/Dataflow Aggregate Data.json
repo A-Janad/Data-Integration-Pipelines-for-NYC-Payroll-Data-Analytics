@@ -37,9 +37,6 @@
 				},
 				{
 					"name": "derivedColumn1"
-				},
-				{
-					"name": "aggregate1"
 				}
 			],
 			"scriptLines": [
@@ -80,10 +77,7 @@
 				"sourcesqlnycpayroll, sourcedatalakepayrollhistory union(byName: true)~> union1",
 				"union1 filter(toInteger(FiscalYear) >= FiscalYear) ~> filter1",
 				"filter1 derive(TotalPaid = RegularGrossPaid+TotalOTPaid+TotalOtherPay) ~> derivedColumn1",
-				"derivedColumn1 aggregate(groupBy(AgencyName,",
-				"          FiscalYear),",
-				"     TotalPaid = sum(toDouble(TotalPaid))) ~> aggregate1",
-				"aggregate1 sink(allowSchemaDrift: true,",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          FiscalYear as integer,",
