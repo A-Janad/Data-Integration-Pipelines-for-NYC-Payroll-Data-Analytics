@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "udacityDFph3pr4"
+		},
+		"ls_DataLakeStorage_Connection_accountKey": {
+			"value": ""
+		},
+		"ls_SqlDatabase_Connection_connectionString": {
+			"value": ""
+		},
+		"ls_SynapseAnalytics_Connection_connectionString": {
+			"value": ""
+		},
+		"ls_DataLakeStorage_Connection_properties_typeProperties_url": {
+			"value": "https://udacitystoragephase3pr4.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

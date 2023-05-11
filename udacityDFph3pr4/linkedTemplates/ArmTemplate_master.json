@@ -1,0 +1,90 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "udacityDFph3pr4"
+		},
+		"ls_DataLakeStorage_Connection_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_DataLakeStorage_Connection'"
+		},
+		"ls_SqlDatabase_Connection_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_SqlDatabase_Connection'"
+		},
+		"ls_SynapseAnalytics_Connection_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_SynapseAnalytics_Connection'"
+		},
+		"ls_DataLakeStorage_Connection_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://udacitystoragephase3pr4.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "udacityDFph3pr4_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_DataLakeStorage_Connection_accountKey": {
+						"value": "[parameters('ls_DataLakeStorage_Connection_accountKey')]"
+					},
+					"ls_SqlDatabase_Connection_connectionString": {
+						"value": "[parameters('ls_SqlDatabase_Connection_connectionString')]"
+					},
+					"ls_SynapseAnalytics_Connection_connectionString": {
+						"value": "[parameters('ls_SynapseAnalytics_Connection_connectionString')]"
+					},
+					"ls_DataLakeStorage_Connection_properties_typeProperties_url": {
+						"value": "[parameters('ls_DataLakeStorage_Connection_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "udacityDFph3pr4_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'udacityDFph3pr4_ArmTemplate_0')]"
+			]
+		}
+	]
+}
