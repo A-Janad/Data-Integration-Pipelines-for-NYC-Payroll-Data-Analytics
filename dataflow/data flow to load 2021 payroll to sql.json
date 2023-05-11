@@ -5,6 +5,10 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "table_synapse_nycpayroll_summary",
+						"type": "DatasetReference"
+					},
 					"name": "sourcenycpayroll2021",
 					"description": "Import data from nycpayroll_ds"
 				}
@@ -22,28 +26,15 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          FiscalYear as short,",
-				"          PayrollNumber as short,",
-				"          AgencyCode as short,",
+				"          FiscalYear as integer,",
 				"          AgencyName as string,",
-				"          EmployeeID as integer,",
-				"          LastName as string,",
-				"          FirstName as string,",
-				"          AgencyStartDate as date,",
-				"          WorkLocationBorough as string,",
-				"          TitleCode as integer,",
-				"          TitleDescription as string,",
-				"          LeaveStatusasofJune30 as string,",
-				"          BaseSalary as double,",
-				"          PayBasis as string,",
-				"          RegularHours as short,",
-				"          RegularGrossPaid as double,",
-				"          OTHours as double,",
-				"          TotalOTPaid as double,",
-				"          TotalOtherPay as double",
+				"          TotalPaid as double",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false) ~> sourcenycpayroll2021",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table',",
+				"     staged: true) ~> sourcenycpayroll2021",
 				"sourcenycpayroll2021 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
