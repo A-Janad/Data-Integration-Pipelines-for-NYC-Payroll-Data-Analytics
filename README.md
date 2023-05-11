@@ -62,7 +62,19 @@ The table are successfully created in the SQL Database
 <img width="535" alt="master_tables_successful " src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/29baf872-2bac-4e2e-a6e4-7c7f1dff2889">
 
 
+# Step 2: Create Linked Services
+
+
+<img width="960" alt="linked_services" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/613d367f-2452-4a68-8407-937a8ed66ca0">
 
 
 
+# Step 3: Create Datasets in Azure Data Factory
 
+## 1.Create the datasets for the 2021 Payroll file on Azure Data Lake Gen2
+
+- Select DelimitedText
+- Set the path to the `nycpayroll_2021.csv` in the Data Lake
+- Preview the data to make sure it is correctly parsed
+
+<img width="960" alt="preview_data" src="https://github.com/A-Janad/Data-Integration-Pipelines-for-NYC-Payroll-Data-Analytics/assets/126161000/0a7b63ef-11e4-4894-bace-2391a69013d7">
